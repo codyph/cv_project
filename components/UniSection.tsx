@@ -159,8 +159,8 @@ function handleDeleteEntryClick(idToDelete: number) {
                       {/* Mapping out each major */}
                       <ol className="px-6 space-y-2">
                         {uni.degrees.map((deg, index) => (
-                        <div className="flex items-center gap-x-2">
-                          <li key={index} className="list-disc">
+                        <div key={index} className="flex items-center gap-x-2">
+                          <li className="list-disc">
                             <input name="degrees" placeholder="Major Title" value={deg}
                              onChange={(e) => {handleDegreeChange(e, uni.id, index)}}/>
                           </li>
@@ -200,7 +200,7 @@ function handleDeleteEntryClick(idToDelete: number) {
         <>
           {uniInfo.map((uni) => {
             return (
-              <div>
+              <div key={uni.id}>
                 <h1 className=" px-6 text-xl text-slate-600 font-bold">
                   {uni.title}
                 </h1>
@@ -209,8 +209,8 @@ function handleDeleteEntryClick(idToDelete: number) {
                     {uni.type} | {uni.startYear} - {uni.endYear}
                   </p>
                   <ol className="px-6">
-                    {uni.degrees.map((deg) => (
-                      <li className="list-disc" key={deg}>
+                    {uni.degrees.map((deg, index) => (
+                      <li key={index} className="list-disc">
                         {deg}
                       </li>
                     ))}

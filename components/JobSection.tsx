@@ -103,7 +103,8 @@ const JobSection: React.FC<JobSectionProps> = ({ isEditing }) => {
         
             jobInfo.map((job) => {
             return (
-              <div className="text-slate-600">
+            <div key={job.id}>              
+                <div className="text-slate-600">
                 <h1 className="px-6 text-xl  font-bold">{job.title}</h1>
                 <div className="px-6">
                   <div className="flex gap-x-2">
@@ -114,6 +115,7 @@ const JobSection: React.FC<JobSectionProps> = ({ isEditing }) => {
                 </div>
                 <br />
               </div>
+            </div>
             );
           })
         )}
