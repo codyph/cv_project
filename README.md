@@ -12,13 +12,13 @@ Not optimized for mobile view :(
 
 ## Example Images
 ### Home Screen
-![Home Screen](https://github.com/codyph/cv_project/blob/main/exampleImages/homeScreen.png)
+![Home Screen](https://raw.githubusercontent.com/codyph/cv_project/main/exampleImages/homeScreen.png)
 
 ### Edit Screen
-![Edit Screen](https://github.com/codyph/cv_project/blob/main/exampleImages/saveScreen.png)
+![Edit Screen](https://raw.githubusercontent.com/codyph/cv_project/main/exampleImages/saveScreen.png)
 
 ### New Entries Screen
-![Entry Screen](https://github.com/codyph/cv_project/blob/main/exampleImages/addingEditsScreen.png)
+![Entry Screen](https://raw.githubusercontent.com/codyph/cv_project/main/exampleImages/addingEditsScreen.png)
 
 ### Saved Edits Screen
-![Saved Edits Screen](https://github.com/codyph/cv_project/blob/main/exampleImages/editedScreen.png)
+![Saved Edits Screen](https://raw.githubusercontent.com/codyph/cv_project/main/exampleImages/editedScreen.png)
