@@ -122,7 +122,7 @@ function handleDeleteEntryClick(idToDelete: number) {
           {uniInfo.map((uni) => {
             return (
               <>
-                <div className="flex justify-between items-center">
+                <div key={uni.id} className="flex justify-between items-center">
                   <div className="px-6 text-slate-600 space-y-2">
                     <input
                       name="title"

@@ -64,7 +64,7 @@ const JobSection: React.FC<JobSectionProps> = ({ isEditing }) => {
             {jobInfo.map((job) => {
             return (
             <>
-              <div className="flex justify-between items-center">
+              <div key={job.id} className="flex justify-between items-center">
                 <div className="text-slate-600 px-6 space-y-2">
                   <input
                   name="title"
