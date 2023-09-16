@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <div className='flex flex-col p-12 gap-6 justify-center drop-shadow-lg items-center'>
       <Button isEditing={isEditing} onClick={handleClick}/>
-      <div className='flex w-[66%] bg-slate-400 flex-col rounded-3xl max-w-7xl'>
+      <div className='flex lg:w-[66%] bg-slate-400 flex-col rounded-3xl max-w-7xl'>
         <Header isEditing={isEditing}/>
         <Body isEditing={isEditing}/>
         <Footer isEditing={isEditing}/>

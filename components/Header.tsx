@@ -20,7 +20,7 @@ const Header: React.FC<HeaderProps> = ({ isEditing }) => {
   return (
     <div
       className={twMerge(
-        "p-10 py-16 text-center h-[225px] flex-1 flex-col",
+        "p-10 py-16 text-center flex-1 flex-col",
         isEditing && "space-y-4 text-slate-800"
       )}
     >
@@ -33,7 +33,7 @@ const Header: React.FC<HeaderProps> = ({ isEditing }) => {
             onChange={(e) => handleNameChange(e)}
           />
         ) : (
-          <h1 className="text-[50px] tracking-[20px]">
+          <h1 className="text-[200%] tracking-[20px] flex text-center justify-center">
             <b>{name}</b>
           </h1>
         )}
