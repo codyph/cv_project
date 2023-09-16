@@ -1,5 +1,5 @@
 # CV Project
-A quick project to display my CV using a website. View my [https://cv-project-ruby-eight.vercel.app/](CV)!
+A quick project to display my CV using a website. View my [CV](https://cv-project-ruby-eight.vercel.app/)!
 
 ### Features
 * Display necessary information about yourself
