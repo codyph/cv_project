@@ -6,9 +6,11 @@ Not optimized for mobile view :(
 
 ### Features
 * Display necessary information about yourself
+* Each button slightly increases in size when hovering.
 * Every field can be edited
 * Entries for Education can be added and deleted. The degrees can also be added and deleted individually.
 * Entries for Job Experience can be added and deleted.
+* Drop shadows <3
 
 ## Example Images
 ### Home Screen
