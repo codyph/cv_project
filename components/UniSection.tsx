@@ -57,7 +57,12 @@ const UniSection: React.FC<UniSectionProps> = ({ isEditing }) => {
         endYear: ""
     }
     setUniInfo([...uniInfo, defaultEntry])
-  }
+}
+
+function handleDeleteEntryClick(idToDelete: number) {
+  const deletedIdList = uniInfo.filter(uI => uI.id !== idToDelete)
+  setUniInfo([...deletedIdList])
+}
 
   function handleAddDegreeClick(entryId: number) {
     setUniInfo(uniInfo.map(uni => {
@@ -107,10 +112,6 @@ const UniSection: React.FC<UniSectionProps> = ({ isEditing }) => {
     )
   }
 
-  function handleDeleteEntryClick(idToDelete: number) {
-    const deletedIdList = uniInfo.filter(uI => uI.id !== idToDelete)
-    setUniInfo([...deletedIdList])
-  }
 
 
   return (

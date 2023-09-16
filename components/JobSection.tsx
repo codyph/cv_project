@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 const initialInfo = {
+  id: 0,
   title: "Defence, Science, Technology Group",
   position: "Vehicle Survivability Scientist",
   startYear: "2022",
@@ -12,8 +13,49 @@ interface JobSectionProps {
   isEditing: boolean;
 }
 
+type JobEntry = {
+    id: number,
+    title: string,
+    position: string,
+    startYear: string,
+    endYear: string,
+    description: string
+}
+
 const JobSection: React.FC<JobSectionProps> = ({ isEditing }) => {
-  const [jobInfo, setjobInfo] = useState([initialInfo]);
+  const [jobInfo, setJobInfo] = useState([initialInfo]);
+
+
+  function handleJobInfoChange(e: React.ChangeEvent<HTMLInputElement>, entryId: number) {
+    setJobInfo(jobInfo.map(job => {
+        if (entryId === job.id) {
+            return {
+                ...job,
+                [e.target.name]: e.target.value
+            }
+        } else {
+            return job
+        }
+    }))
+  }
+
+  function handleAddEntryClick() {
+    const defaultEntry: JobEntry = {
+        id: jobInfo.length,
+        title: "",
+        position: "",
+        startYear: "",
+        endYear: "",
+        description: ""
+    }
+    setJobInfo([...jobInfo, defaultEntry])
+  }
+
+  function handleDeleteEntryClick(idToDelete: number) {
+    const deletedIdList = jobInfo.filter(uI => uI.id !== idToDelete)
+    setJobInfo([...deletedIdList])
+  }
+
 
   return (
     <div>
@@ -25,21 +67,24 @@ const JobSection: React.FC<JobSectionProps> = ({ isEditing }) => {
               <div className="flex justify-between items-center">
                 <div className="text-slate-600 px-6 space-y-2">
                   <input
+                  name="title"
                     className="w-[44%]"
                     placeholder="Job Title"
                     value={job.title}
+                    onChange={e => handleJobInfoChange(e, job.id)}
                   />
                   <div className="space-y-2">
                     <div className="flex space-x-2">
-                      <input className="w-[44%]" placeholder="Job Title" value={job.position}/>
-                      <input className="w-[10%]" placeholder="Start Year" value={job.startYear}/>
-                      <input className="w-[10%]" placeholder="End Year" value={job.endYear}/>
+                      <input name="position" className="w-[44%]" placeholder="Position" value={job.position} onChange={e => handleJobInfoChange(e, job.id)}/>
+                      <input name="startYear" className="w-[10%]" placeholder="Start Year" value={job.startYear} onChange={e => handleJobInfoChange(e, job.id)}/>
+                      <input name="endYear" className="w-[10%]" placeholder="End Year" value={job.endYear} onChange={e => handleJobInfoChange(e, job.id)}/>
                     </div>
-                    <textarea className="w-full h-full" placeholder="Brief description" value={job.description}/>
+                    <input name="description" className="w-full h-full" placeholder="Brief description" value={job.description} onChange={e => handleJobInfoChange(e, job.id)}/>
                   </div>
                   <br />
                 </div>
-                <button className="bg-[#F19A3E] w-8 h-8 rounded-full hover:scale-[110%] flex items-center justify-center text-[30px] pb-1 text-white">
+                <button className="bg-[#F19A3E] w-8 h-8 rounded-full hover:scale-[110%] flex items-center justify-center text-[30px] pb-1 text-white"
+                    onClick={() => {handleDeleteEntryClick(job.id)}}>
                   -
                 </button>
               </div>
@@ -47,8 +92,9 @@ const JobSection: React.FC<JobSectionProps> = ({ isEditing }) => {
             </>
             );
           })}
-          <div className="flex justify-center">
-            <button className="bg-[#F19A3E] w-12 h-12 rounded-full hover:scale-[110%] flex items-center justify-center text-[40px] pb-1">
+          <div className="flex justify-center pt-6">
+            <button className="bg-[#F19A3E] w-12 h-12 rounded-full hover:scale-[110%] flex items-center justify-center text-[40px] pb-1"
+                onClick={handleAddEntryClick}>
               +
             </button>
           </div>
