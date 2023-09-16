@@ -188,7 +188,7 @@ const UniSection: React.FC<UniSectionProps> = ({ isEditing }) => {
             );
           })}
 
-          <div className="flex justify-center">
+          <div className="flex justify-center pt-6">
             <button className="bg-[#F19A3E] w-12 h-12 rounded-full hover:scale-[110%] flex items-center justify-center text-[40px] pb-1"
                 onClick={handleAddEntryClick}>
               +
