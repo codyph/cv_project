@@ -11,31 +11,14 @@ const Body: React.FC<BodyProps> = ({ isEditing }) => {
       <h2 className="rounded-lg bg-gradient-to-r from-slate-400 text-2xl text-slate-600 font-bold px-3">
         Education
       </h2>
-      <UniSection uniInformation={uwaInfo} />
-      <UniSection uniInformation={umInfo} />
+      <UniSection isEditing={isEditing}/>
       <br />
       <h2 className="rounded-lg bg-gradient-to-r from-slate-400 text-2xl text-slate-600 font-bold px-3">
         Job Experience
       </h2>
-      <JobSection />
+      <JobSection isEditing={isEditing}/>
     </div>
   );
 };
 
 export default Body;
-
-const umInfo = {
-  title: "University of Melbourne",
-  type: "Master of Engineering",
-  degrees: ["Aerospace Engineering"],
-  startYear: "2020",
-  endYear: "2022",
-};
-
-const uwaInfo = {
-  title: "University of Western Australia",
-  type: "Bachelor of Science & Engineering",
-  degrees: ["Astrophysics", "Mechanical Engineering"],
-  startYear: "2017",
-  endYear: "2019",
-};

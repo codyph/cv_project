@@ -27,6 +27,7 @@ const Header: React.FC<HeaderProps> = ({ isEditing }) => {
       <div>
         {isEditing ? (
           <input
+            className="text-[50px] text-center"
             placeholder="What's your name?"
             value={name}
             onChange={(e) => handleNameChange(e)}
@@ -40,6 +41,7 @@ const Header: React.FC<HeaderProps> = ({ isEditing }) => {
       <div>
         {isEditing ? (
           <input
+            className="text-center w-[44%]"
             placeholder="What's your main title?"
             value={title}
             onChange={(e) => handleTitleChange(e)}
